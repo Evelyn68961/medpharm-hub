@@ -1,0 +1,23 @@
+<section class="hero">
+    <h1>{{title}}</h1>
+    <p>{{description}}</p>
+</section>
+
+<section class="posts-section">
+    <h2>Recent Posts</h2>
+    
+    <div class="posts-list">
+        {{#each posts}}
+        <article class="post-card">
+            <span class="post-date">{{this.date}}</span>
+            <h3><a href="/post/{{this.id}}">{{this.title}}</a></h3>
+            <p>{{this.summary}}</p>
+            <div class="post-tags">
+                {{#each this.tags}}
+                <span class="tag">{{this}}</span>
+                {{/each}}
+            </div>
+        </article>
+        {{/each}}
+    </div>
+</section>

@@ -1,0 +1,19 @@
+<article class="post-detail">
+    <header class="post-header">
+        <span class="post-date">{{post.date}}</span>
+        <h1>{{post.title}}</h1>
+        <div class="post-tags">
+            {{#each post.tags}}
+            <span class="tag">{{this}}</span>
+            {{/each}}
+        </div>
+    </header>
+    
+    <div class="post-content">
+        {{post.content}}
+    </div>
+    
+    <footer class="post-footer">
+        <a href="/" class="back-link">← Back to Home</a>
+    </footer>
+</article>
