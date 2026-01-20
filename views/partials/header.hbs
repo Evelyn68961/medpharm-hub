@@ -2,9 +2,14 @@
     <nav class="nav-container">
         <a href="/" class="logo">🍄 MedPharm Hub @enoki.rx</a>
         <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/posts">All Posts</a></li>
+            <li><a href="/?lang={{currentLang}}">Home</a></li>
+            <li><a href="/posts?lang={{currentLang}}">All Posts</a></li>
             <li><a href="/about">About</a></li>
+            <li class="lang-toggle">
+                <a href="?lang=en" class="lang-btn {{#if isEnglish}}active{{/if}}">EN</a>
+                <span class="lang-divider">|</span>
+                <a href="?lang=zh" class="lang-btn {{#if isChinese}}active{{/if}}">中</a>
+            </li>
         </ul>
     </nav>
 </header>
