@@ -3,7 +3,7 @@ const { engine } = require('express-handlebars');
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Handlebars Configuration
 app.engine('hbs', engine({
@@ -21,6 +21,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Routes
 const indexRoutes = require('./routes/index');
 app.use('/', indexRoutes);
+
+// Global error handler
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).render('error', { title: 'Server Error', message: 'Something went wrong. Please try again later.' });
+});
 
 // Start Server
 app.listen(PORT, () => {

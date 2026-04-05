@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
-    googleDocId: '18m7ulylt-71W_XbB34EyxV3X_T4QcCSVNdfY1GF9EhU'
+    googleDocId: process.env.GOOGLE_DOC_ID
 };
